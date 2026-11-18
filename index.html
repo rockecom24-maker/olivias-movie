@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Olivia's Princess Adventure · StarringYou</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1D1A3F;--brand:#6B45F5;--gold:#FFC83D;--night:#1B1650}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Nunito,system-ui,sans-serif;color:#fff;background:radial-gradient(120% 70% at 50% 0%,#4a2fb8 0%,#2a1d7a 40%,var(--night) 100%);min-height:100vh}
+.top{display:flex;align-items:center;justify-content:center;gap:10px;padding:22px 16px 8px}
+.top img{width:40px;height:40px;border-radius:12px}
+.top b{font-family:Fredoka;font-size:22px;font-weight:700}.top b span{color:var(--gold)}
+main{max-width:980px;margin:0 auto;padding:12px 16px 48px;text-align:center}
+.tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:.06em;margin-top:10px}
+h1{font-family:Fredoka;font-weight:700;font-size:clamp(30px,6vw,52px);line-height:1.05;margin:14px 0 6px}
+h1 span{color:var(--gold)}
+.sub{opacity:.85;font-size:17px;margin-bottom:22px}
+.player{position:relative;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 4px rgba(255,200,61,.55)}
+video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:linear-gradient(transparent 40%,rgba(0,0,0,.35))}
+.play i{width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.play i:after{content:"";margin-left:8px;border-left:30px solid var(--ink);border-top:19px solid transparent;border-bottom:19px solid transparent}
+.meta{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:18px;font-weight:700;opacity:.9}
+.dl{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--brand);color:#fff;text-decoration:none;font-family:Fredoka;font-weight:600;font-size:19px;padding:15px 32px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35)}.dl:hover{background:#5433D6}
+.note{margin:28px auto 0;max-width:620px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:18px 20px;line-height:1.5}
+footer{opacity:.6;font-size:13px;margin-top:30px}
+</style></head><body>
+<div class="top"><img src="logo.png" alt=""><b>Starring<span>You</span></b></div>
+<main>
+<div class="tag">🎬 YOUR MOVIE IS READY</div>
+<h1>Olivia's <span>Princess Adventure</span></h1>
+<p class="sub">Episode 1 · Starring Olivia as the hero 👑</p>
+<div class="player">
+<video id="v" controls playsinline preload="metadata" poster="poster.jpg"></video>
+<div class="play" id="p"><i></i></div>
+</div>
+<div class="meta"><span>⏱ 3:00</span><span>👑 Princess</span><span>🇺🇸 English</span></div>
+<a class="dl" href="https://github.com/rockecom24-maker/olivias-movie/releases/download/film/Olivias-Princess-Adventure.mp4" download>⬇&nbsp; Download Olivia's movie</a>
+<div class="note">Press play and watch Olivia's face light up when she sees herself on screen ✨</div>
+<footer>© StarringYou</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
+<script>
+var v=document.getElementById('v'),p=document.getElementById('p'),src='v/film.m3u8';
+if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=src}else if(window.Hls&&Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v)}
+p.onclick=function(){p.style.display='none';v.play()};v.addEventListener('play',function(){p.style.display='none'});
+</script>
+</body></html>
